@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  serviceapi:
+    build: ./
+    image: marscar
+    restart: always
+    hostname: localhost
+    ports:
+      - 8000:8000
+    command: npm run dev
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    
